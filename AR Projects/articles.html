@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - MetricPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="nav-logo"><a href="index.html"><div class="nav-logo-icon"><span class="iconify" data-icon="lucide:ruler"></span></div><div class="nav-logo-text">Metric<b>Pro</b></div></a></div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chart.html">Chart</a></li>
+        <li class="nav-dropdown" id="convDropdown">
+            <button onclick="toggleDropdown()">Converters <span class="iconify" data-icon="lucide:chevron-down" style="font-size:14px;margin-left:3px;vertical-align:middle;transition:transform .4s"></span></button>
+            <div class="dropdown-menu">
+                <a href="length.html"><span class="iconify" data-icon="lucide:ruler"></span> Length</a>
+                <a href="area.html"><span class="iconify" data-icon="lucide:square"></span> Area</a>
+                <a href="volume.html"><span class="iconify" data-icon="lucide:box"></span> Volume</a>
+                <a href="mass.html"><span class="iconify" data-icon="lucide:weight"></span> Mass</a>
+                <a href="temperature.html"><span class="iconify" data-icon="lucide:thermometer"></span> Temperature</a>
+                <a href="currency.html" class="highlight"><span class="iconify" data-icon="lucide:banknote"></span> Currency</a>
+            </div>
+        </li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">🏠 Home</a>
+    <a href="chart.html" onclick="closeMobile()">📊 Chart</a>
+    <div class="mob-sub-title">Converters</div>
+    <a href="length.html" onclick="closeMobile()">📏 Length</a>
+    <a href="area.html" onclick="closeMobile()">📐 Area</a>
+    <a href="volume.html" onclick="closeMobile()">📦 Volume</a>
+    <a href="mass.html" onclick="closeMobile()">⚖️ Mass</a>
+    <a href="temperature.html" onclick="closeMobile()">🌡️ Temperature</a>
+    <a href="currency.html" onclick="closeMobile()">💰 Currency</a>
+    <div class="mob-sub-title">Learn</div>
+    <a href="history.html" onclick="closeMobile()">📜 History</a>
+    <a href="articles.html" onclick="closeMobile()">📖 Articles</a>
+    <a href="faq.html" onclick="closeMobile()">❓ FAQs</a>
+    <a href="contact.html" onclick="closeMobile()">✉️ Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero bg-red">
+    <div class="shape" style="width:300px;height:300px;background:#fff;top:-75px;left:-75px"></div>
+    <h1 class="anim-blur">📖 Articles</h1>
+    <p class="anim-blur delay-1">Deep dive into measurement systems</p>
+</div>
+
+<!-- ARTICLES SECTION -->
+<section class="section">
+    <div class="container">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px">
+            <div class="article-card scroll-anim from-left">
+                <div class="article-img bg1"><span class="iconify" data-icon="lucide:globe"></span></div>
+                <div class="article-body">
+                    <h3>The SI System</h3>
+                    <p>Established in 1960, built on seven base units defined by fundamental constants.</p>
+                </div>
+            </div>
+            <div class="article-card scroll-anim blur-up">
+                <div class="article-img bg2"><span class="iconify" data-icon="lucide:scale"></span></div>
+                <div class="article-body">
+                    <h3>The Metric System</h3>
+                    <p>Originating in France in 1795, universal and decimal.</p>
+                </div>
+            </div>
+            <div class="article-card scroll-anim from-right">
+                <div class="article-img bg3"><span class="iconify" data-icon="lucide:ruler"></span></div>
+                <div class="article-body">
+                    <h3>The Meter</h3>
+                    <p>From equator-to-pole definition to the 1983 speed-of-light definition.</p>
+                </div>
+            </div>
+            <div class="article-card scroll-anim from-left">
+                <div class="article-img bg4"><span class="iconify" data-icon="lucide:flag"></span></div>
+                <div class="article-body">
+                    <h3>Traditional U.S. Units</h3>
+                    <p>Inches, gallons, pounds — the US Customary System differs from British Imperial.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-glow g1"></div>
+    <div class="footer-glow g2"></div>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="flogo">Metric<b>Pro</b></div>
+            <p>A comprehensive metric conversion tool for students and professionals.</p>
+        </div>
+        <div>
+            <h4>Converters</h4>
+            <ul>
+                <li><a href="length.html">Length</a></li>
+                <li><a href="area.html">Area</a></li>
+                <li><a href="volume.html">Volume</a></li>
+                <li><a href="mass.html">Mass</a></li>
+                <li><a href="temperature.html">Temperature</a></li>
+                <li><a href="currency.html">Currency</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Learn</h4>
+            <ul>
+                <li><a href="chart.html">Chart</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2025 MetricPro. All rights reserved.</div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="iconify" data-icon="lucide:chevron-up"></span></button>
+<div class="toast" id="toast"><span class="iconify" data-icon="lucide:check-circle"></span><span id="toastMsg"></span></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

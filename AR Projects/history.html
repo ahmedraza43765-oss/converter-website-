@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Measurement - MetricPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="nav-logo"><a href="index.html"><div class="nav-logo-icon"><span class="iconify" data-icon="lucide:ruler"></span></div><div class="nav-logo-text">Metric<b>Pro</b></div></a></div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chart.html">Chart</a></li>
+        <li class="nav-dropdown" id="convDropdown">
+            <button onclick="toggleDropdown()">Converters <span class="iconify" data-icon="lucide:chevron-down" style="font-size:14px;margin-left:3px;vertical-align:middle;transition:transform .4s"></span></button>
+            <div class="dropdown-menu">
+                <a href="length.html"><span class="iconify" data-icon="lucide:ruler"></span> Length</a>
+                <a href="area.html"><span class="iconify" data-icon="lucide:square"></span> Area</a>
+                <a href="volume.html"><span class="iconify" data-icon="lucide:box"></span> Volume</a>
+                <a href="mass.html"><span class="iconify" data-icon="lucide:weight"></span> Mass</a>
+                <a href="temperature.html"><span class="iconify" data-icon="lucide:thermometer"></span> Temperature</a>
+                <a href="currency.html" class="highlight"><span class="iconify" data-icon="lucide:banknote"></span> Currency</a>
+            </div>
+        </li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">🏠 Home</a>
+    <a href="chart.html" onclick="closeMobile()">📊 Chart</a>
+    <div class="mob-sub-title">Converters</div>
+    <a href="length.html" onclick="closeMobile()">📏 Length</a>
+    <a href="area.html" onclick="closeMobile()">📐 Area</a>
+    <a href="volume.html" onclick="closeMobile()">📦 Volume</a>
+    <a href="mass.html" onclick="closeMobile()">⚖️ Mass</a>
+    <a href="temperature.html" onclick="closeMobile()">🌡️ Temperature</a>
+    <a href="currency.html" onclick="closeMobile()">💰 Currency</a>
+    <div class="mob-sub-title">Learn</div>
+    <a href="history.html" onclick="closeMobile()">📜 History</a>
+    <a href="articles.html" onclick="closeMobile()">📖 Articles</a>
+    <a href="faq.html" onclick="closeMobile()">❓ FAQs</a>
+    <a href="contact.html" onclick="closeMobile()">✉️ Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero bg-dark">
+    <div class="shape" style="width:320px;height:320px;background:#E53935;top:-90px;right:-90px"></div>
+    <h1 class="anim-blur">📜 History of Measurement Units</h1>
+    <p class="anim-blur delay-1">How humanity invented and standardized measurement</p>
+</div>
+
+<!-- TIMELINE SECTION -->
+<section class="section">
+    <div class="container" style="max-width:760px">
+        <div class="timeline">
+            <div class="timeline-item scroll-anim from-left">
+                <div class="timeline-dot"></div>
+                <div class="year">3000+ BC</div>
+                <h3>The Cubit & Body-Based Units</h3>
+                <p>The Egyptian cubit (~52 cm) was one of the first standardized units.</p>
+            </div>
+            <div class="timeline-item scroll-anim from-right">
+                <div class="timeline-dot"></div>
+                <div class="year">1790 — France</div>
+                <h3>Birth of the Metric System</h3>
+                <p>The meter defined as one ten-millionth of the equator-to-pole distance.</p>
+            </div>
+            <div class="timeline-item scroll-anim from-left">
+                <div class="timeline-dot"></div>
+                <div class="year">1875</div>
+                <h3>Treaty of the Meter</h3>
+                <p>17 nations signed the treaty, establishing global standards.</p>
+            </div>
+            <div class="timeline-item scroll-anim from-right">
+                <div class="timeline-dot"></div>
+                <div class="year">1960</div>
+                <h3>The SI System</h3>
+                <p>7 base units: meter, kilogram, second, ampere, kelvin, mole, candela.</p>
+            </div>
+            <div class="timeline-item scroll-anim from-left">
+                <div class="timeline-dot"></div>
+                <div class="year">1983</div>
+                <h3>Speed of Light Definition</h3>
+                <p>The meter redefined as distance light travels in 1/299,792,458 of a second.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-glow g1"></div>
+    <div class="footer-glow g2"></div>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="flogo">Metric<b>Pro</b></div>
+            <p>A comprehensive metric conversion tool for students and professionals.</p>
+        </div>
+        <div>
+            <h4>Converters</h4>
+            <ul>
+                <li><a href="length.html">Length</a></li>
+                <li><a href="area.html">Area</a></li>
+                <li><a href="volume.html">Volume</a></li>
+                <li><a href="mass.html">Mass</a></li>
+                <li><a href="temperature.html">Temperature</a></li>
+                <li><a href="currency.html">Currency</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Learn</h4>
+            <ul>
+                <li><a href="chart.html">Chart</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2025 MetricPro. All rights reserved.</div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="iconify" data-icon="lucide:chevron-up"></span></button>
+<div class="toast" id="toast"><span class="iconify" data-icon="lucide:check-circle"></span><span id="toastMsg"></span></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

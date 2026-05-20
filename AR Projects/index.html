@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetricPro - Ultimate Metric Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="nav-logo"><a href="index.html"><div class="nav-logo-icon"><span class="iconify" data-icon="lucide:ruler"></span></div><div class="nav-logo-text">Metric<b>Pro</b></div></a></div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chart.html">Chart</a></li>
+        <li class="nav-dropdown" id="convDropdown">
+            <button onclick="toggleDropdown()">Converters <span class="iconify" data-icon="lucide:chevron-down" style="font-size:14px;margin-left:3px;vertical-align:middle;transition:transform .4s"></span></button>
+            <div class="dropdown-menu">
+                <a href="length.html"><span class="iconify" data-icon="lucide:ruler"></span> Length</a>
+                <a href="area.html"><span class="iconify" data-icon="lucide:square"></span> Area</a>
+                <a href="volume.html"><span class="iconify" data-icon="lucide:box"></span> Volume</a>
+                <a href="mass.html"><span class="iconify" data-icon="lucide:weight"></span> Mass</a>
+                <a href="temperature.html"><span class="iconify" data-icon="lucide:thermometer"></span> Temperature</a>
+                <a href="currency.html" class="highlight"><span class="iconify" data-icon="lucide:banknote"></span> Currency</a>
+            </div>
+        </li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">🏠 Home</a>
+    <a href="chart.html" onclick="closeMobile()">📊 Chart</a>
+    <div class="mob-sub-title">Converters</div>
+    <a href="length.html" onclick="closeMobile()">📏 Length</a>
+    <a href="area.html" onclick="closeMobile()">📐 Area</a>
+    <a href="volume.html" onclick="closeMobile()">📦 Volume</a>
+    <a href="mass.html" onclick="closeMobile()">⚖️ Mass</a>
+    <a href="temperature.html" onclick="closeMobile()">🌡️ Temperature</a>
+    <a href="currency.html" onclick="closeMobile()">💰 Currency</a>
+    <div class="mob-sub-title">Learn</div>
+    <a href="history.html" onclick="closeMobile()">📜 History</a>
+    <a href="articles.html" onclick="closeMobile()">📖 Articles</a>
+    <a href="faq.html" onclick="closeMobile()">❓ FAQs</a>
+    <a href="contact.html" onclick="closeMobile()">✉️ Contact</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-dark-overlay"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-particles">
+        <div class="hero-particle hp-1"></div><div class="hero-particle hp-2"></div><div class="hero-particle hp-3"></div><div class="hero-particle hp-4"></div><div class="hero-particle hp-5"></div>
+        <div class="hero-particle hp-6"></div><div class="hero-particle hp-7"></div><div class="hero-particle hp-8"></div><div class="hero-particle hp-9"></div><div class="hero-particle hp-10"></div>
+    </div>
+    <div class="hero-blob b1"></div><div class="hero-blob b2"></div><div class="hero-blob b3"></div>
+    <div class="spin-accent" style="top:12%;right:8%"></div>
+    <div class="spin-accent" style="bottom:18%;left:6%;width:90px;height:90px;animation-direction:reverse;animation-duration:15s"></div>
+    <div class="hero-float-icons">
+        <div class="hero-float-icon hfi-1"><span class="iconify" data-icon="lucide:ruler"></span></div>
+        <div class="hero-float-icon hfi-2"><span class="iconify" data-icon="lucide:thermometer"></span></div>
+        <div class="hero-float-icon hfi-3"><span class="iconify" data-icon="lucide:scale"></span></div>
+        <div class="hero-float-icon hfi-4"><span class="iconify" data-icon="lucide:box"></span></div>
+        <div class="hero-float-icon hfi-5"><span class="iconify" data-icon="lucide:square"></span></div>
+        <div class="hero-float-icon hfi-6"><span class="iconify" data-icon="lucide:weight"></span></div>
+        <div class="hero-float-icon hfi-7"><span class="iconify" data-icon="lucide:banknote"></span></div>
+        <div class="hero-float-icon hfi-8"><span class="iconify" data-icon="lucide:move-horizontal"></span></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-badge hero-badge-anim"><span class="dot"></span> Precision Conversion Tool</div>
+        <span class="hero-line"></span>
+        <h1 class="hero-title-anim">Convert Anything,<br><em>Instantly</em></h1>
+        <p class="hero-desc-anim">A comprehensive metric conversion tool for students and professionals.</p>
+        <div class="hero-btns hero-btns-anim">
+            <a href="length.html" class="btn-primary ripple-wrap magnetic"><span class="iconify" data-icon="lucide:arrow-right"></span> Start Converting</a>
+            <a href="currency.html" class="btn-secondary ripple-wrap magnetic"><span class="iconify" data-icon="lucide:banknote"></span> Currency</a>
+        </div>
+        <div class="hero-stats-wrap">
+            <div class="hero-stat hero-stat-anim" style="animation-delay:1.15s"><div class="num">6</div><div class="label">Converter Types</div></div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat hero-stat-anim" style="animation-delay:1.3s"><div class="num">50+</div><div class="label">Unit Conversions</div></div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat hero-stat-anim" style="animation-delay:1.45s"><div class="num">30+</div><div class="label">World Currencies</div></div>
+        </div>
+    </div>
+    <div class="wave-deco"><svg viewBox="0 0 1440 50" preserveAspectRatio="none"><path fill="#FAFAFA" d="M0,25 C360,50 720,0 1080,25 C1260,37 1380,12 1440,25 L1440,50 L0,50 Z"/></svg></div>
+</section>
+
+<!-- QUICK ACCESS -->
+<section class="section">
+    <div class="container">
+        <div class="section-header scroll-anim blur-up">
+            <div class="section-tag"><span class="line"></span> Quick Access <span class="line"></span></div>
+            <h2 class="section-title">Choose a Converter</h2>
+        </div>
+        <div class="quick-grid">
+            <a href="length.html" class="quick-card scroll-anim zoom ripple-wrap"><span class="iconify qicon" data-icon="lucide:ruler"></span><h4>Length</h4><span>Inches, Feet, Meters...</span></a>
+            <a href="area.html" class="quick-card scroll-anim zoom ripple-wrap"><span class="iconify qicon" data-icon="lucide:square"></span><h4>Area</h4><span>Sq Ft, Acres...</span></a>
+            <a href="volume.html" class="quick-card scroll-anim zoom ripple-wrap"><span class="iconify qicon" data-icon="lucide:box"></span><h4>Volume</h4><span>Gallons, Liters...</span></a>
+            <a href="mass.html" class="quick-card scroll-anim zoom ripple-wrap"><span class="iconify qicon" data-icon="lucide:weight"></span><h4>Mass</h4><span>Pounds, Kg, Tons...</span></a>
+            <a href="temperature.html" class="quick-card scroll-anim zoom ripple-wrap"><span class="iconify qicon" data-icon="lucide:thermometer"></span><h4>Temperature</h4><span>°F, °C, K...</span></a>
+            <a href="currency.html" class="quick-card scroll-anim zoom ripple-wrap" style="border-color:rgba(229,57,53,.2)"><span class="iconify qicon" data-icon="lucide:banknote"></span><h4 style="color:#E53935">Currency</h4><span>PKR, USD, EUR...</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="section section-dark" style="position:relative;overflow:hidden">
+    <div class="container">
+        <div class="section-header scroll-anim blur-up">
+            <div class="section-tag"><span class="line"></span> Why MetricPro <span class="line"></span></div>
+            <h2 class="section-title">Built for Real Learning</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card scroll-anim from-left" style="background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.06)">
+                <div class="feature-icon" style="background:rgba(229,57,53,.1)"><span class="iconify" data-icon="lucide:zap"></span></div>
+                <h3 style="color:#fff">Instant Results</h3>
+                <p style="color:rgba(255,255,255,.4)">Real-time conversion as you type.</p>
+            </div>
+            <div class="feature-card scroll-anim blur-up" style="background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.06)">
+                <div class="feature-icon" style="background:rgba(229,57,53,.1)"><span class="iconify" data-icon="lucide:layers"></span></div>
+                <h3 style="color:#fff">Multi-Page Design</h3>
+                <p style="color:rgba(255,255,255,.4)">Each converter on its own dedicated page.</p>
+            </div>
+            <div class="feature-card scroll-anim from-right" style="background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.06)">
+                <div class="feature-icon" style="background:rgba(229,57,53,.1)"><span class="iconify" data-icon="lucide:book-open"></span></div>
+                <h3 style="color:#fff">Educational Content</h3>
+                <p style="color:rgba(255,255,255,.4)">Articles, history, and FAQs for deep understanding.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPLORE SECTION -->
+<section class="section" style="padding-bottom:50px">
+    <div class="container">
+        <div class="section-header scroll-anim blur-up">
+            <div class="section-tag"><span class="line"></span> Explore <span class="line"></span></div>
+            <h2 class="section-title">Learn More</h2>
+        </div>
+        <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+            <a href="chart.html" class="feature-card scroll-anim rotate-in ripple-wrap">
+                <div class="feature-icon"><span class="iconify" data-icon="lucide:table"></span></div>
+                <h3>Conversion Chart</h3>
+                <p>Complete reference table with all multiplying factors.</p>
+            </a>
+            <a href="history.html" class="feature-card scroll-anim rotate-in ripple-wrap">
+                <div class="feature-icon"><span class="iconify" data-icon="lucide:clock"></span></div>
+                <h3>History of Units</h3>
+                <p>How measurement units evolved through centuries.</p>
+            </a>
+            <a href="articles.html" class="feature-card scroll-anim rotate-in ripple-wrap">
+                <div class="feature-icon"><span class="iconify" data-icon="lucide:file-text"></span></div>
+                <h3>Articles</h3>
+                <p>SI System, Metric System, US Units explained.</p>
+            </a>
+            <a href="faq.html" class="feature-card scroll-anim rotate-in ripple-wrap">
+                <div class="feature-icon"><span class="iconify" data-icon="lucide:help-circle"></span></div>
+                <h3>FAQs</h3>
+                <p>Common questions about measurements.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-glow g1"></div>
+    <div class="footer-glow g2"></div>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="flogo">Metric<b>Pro</b></div>
+            <p>A comprehensive metric conversion tool for students and professionals.</p>
+        </div>
+        <div>
+            <h4>Converters</h4>
+            <ul>
+                <li><a href="length.html">Length</a></li>
+                <li><a href="area.html">Area</a></li>
+                <li><a href="volume.html">Volume</a></li>
+                <li><a href="mass.html">Mass</a></li>
+                <li><a href="temperature.html">Temperature</a></li>
+                <li><a href="currency.html">Currency</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Learn</h4>
+            <ul>
+                <li><a href="chart.html">Chart</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2025 MetricPro. All rights reserved.</div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="iconify" data-icon="lucide:chevron-up"></span></button>
+<div class="toast" id="toast"><span class="iconify" data-icon="lucide:check-circle"></span><span id="toastMsg"></span></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

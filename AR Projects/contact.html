@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MetricPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="nav-logo"><a href="index.html"><div class="nav-logo-icon"><span class="iconify" data-icon="lucide:ruler"></span></div><div class="nav-logo-text">Metric<b>Pro</b></div></a></div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chart.html">Chart</a></li>
+        <li class="nav-dropdown" id="convDropdown">
+            <button onclick="toggleDropdown()">Converters <span class="iconify" data-icon="lucide:chevron-down" style="font-size:14px;margin-left:3px;vertical-align:middle;transition:transform .4s"></span></button>
+            <div class="dropdown-menu">
+                <a href="length.html"><span class="iconify" data-icon="lucide:ruler"></span> Length</a>
+                <a href="area.html"><span class="iconify" data-icon="lucide:square"></span> Area</a>
+                <a href="volume.html"><span class="iconify" data-icon="lucide:box"></span> Volume</a>
+                <a href="mass.html"><span class="iconify" data-icon="lucide:weight"></span> Mass</a>
+                <a href="temperature.html"><span class="iconify" data-icon="lucide:thermometer"></span> Temperature</a>
+                <a href="currency.html" class="highlight"><span class="iconify" data-icon="lucide:banknote"></span> Currency</a>
+            </div>
+        </li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">🏠 Home</a>
+    <a href="chart.html" onclick="closeMobile()">📊 Chart</a>
+    <div class="mob-sub-title">Converters</div>
+    <a href="length.html" onclick="closeMobile()">📏 Length</a>
+    <a href="area.html" onclick="closeMobile()">📐 Area</a>
+    <a href="volume.html" onclick="closeMobile()">📦 Volume</a>
+    <a href="mass.html" onclick="closeMobile()">⚖️ Mass</a>
+    <a href="temperature.html" onclick="closeMobile()">🌡️ Temperature</a>
+    <a href="currency.html" onclick="closeMobile()">💰 Currency</a>
+    <div class="mob-sub-title">Learn</div>
+    <a href="history.html" onclick="closeMobile()">📜 History</a>
+    <a href="articles.html" onclick="closeMobile()">📖 Articles</a>
+    <a href="faq.html" onclick="closeMobile()">❓ FAQs</a>
+    <a href="contact.html" onclick="closeMobile()">✉️ Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero bg-dark">
+    <div class="shape" style="width:280px;height:280px;background:#E53935;top:-60px;left:-90px"></div>
+    <h1 class="anim-blur">✉️ Get in Touch</h1>
+    <p class="anim-blur delay-1">We'd love to hear from you</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+    <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;@media(max-width:900px){grid-template-columns:1fr;gap:40px}">
+            <!-- Contact Info -->
+            <div>
+                <h2 style="margin-bottom:30px">Contact Information</h2>
+                
+                <div class="contact-info-card scroll-anim from-left">
+                    <div class="ci-icon"><span class="iconify" data-icon="lucide:map-pin"></span></div>
+                    <div>
+                        <h3>Address</h3>
+                        <p>123 Metric Street<br>Karachi, Pakistan</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card scroll-anim blur-up">
+                    <div class="ci-icon"><span class="iconify" data-icon="lucide:mail"></span></div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>info@metricpro.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card scroll-anim from-right">
+                    <div class="ci-icon"><span class="iconify" data-icon="lucide:phone"></span></div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+92 21 1234-5678</p>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top:40px;margin-bottom:20px">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><span class="iconify" data-icon="lucide:facebook"></span></a>
+                    <a href="#" class="social-icon"><span class="iconify" data-icon="lucide:twitter"></span></a>
+                    <a href="#" class="social-icon"><span class="iconify" data-icon="lucide:linkedin"></span></a>
+                    <a href="#" class="social-icon"><span class="iconify" data-icon="lucide:instagram"></span></a>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="scroll-anim from-right">
+                <form class="contact-form" onsubmit="submitContact(event)">
+                    <div class="form-group">
+                        <label for="contactFirstName">First Name</label>
+                        <input type="text" id="contactFirstName" name="firstName" required placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactLastName">Last Name</label>
+                        <input type="text" id="contactLastName" name="lastName" required placeholder="Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address</label>
+                        <input type="email" id="contactEmail" name="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="message" rows="6" required placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width:100%;margin-top:10px">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-glow g1"></div>
+    <div class="footer-glow g2"></div>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="flogo">Metric<b>Pro</b></div>
+            <p>A comprehensive metric conversion tool for students and professionals.</p>
+        </div>
+        <div>
+            <h4>Converters</h4>
+            <ul>
+                <li><a href="length.html">Length</a></li>
+                <li><a href="area.html">Area</a></li>
+                <li><a href="volume.html">Volume</a></li>
+                <li><a href="mass.html">Mass</a></li>
+                <li><a href="temperature.html">Temperature</a></li>
+                <li><a href="currency.html">Currency</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Learn</h4>
+            <ul>
+                <li><a href="chart.html">Chart</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2025 MetricPro. All rights reserved.</div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="iconify" data-icon="lucide:chevron-up"></span></button>
+<div class="toast" id="toast"><span class="iconify" data-icon="lucide:check-circle"></span><span id="toastMsg"></span></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

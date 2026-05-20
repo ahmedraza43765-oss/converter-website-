@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume Converter - MetricPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="nav-logo"><a href="index.html"><div class="nav-logo-icon"><span class="iconify" data-icon="lucide:ruler"></span></div><div class="nav-logo-text">Metric<b>Pro</b></div></a></div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chart.html">Chart</a></li>
+        <li class="nav-dropdown" id="convDropdown">
+            <button onclick="toggleDropdown()">Converters <span class="iconify" data-icon="lucide:chevron-down" style="font-size:14px;margin-left:3px;vertical-align:middle;transition:transform .4s"></span></button>
+            <div class="dropdown-menu">
+                <a href="length.html"><span class="iconify" data-icon="lucide:ruler"></span> Length</a>
+                <a href="area.html"><span class="iconify" data-icon="lucide:square"></span> Area</a>
+                <a href="volume.html"><span class="iconify" data-icon="lucide:box"></span> Volume</a>
+                <a href="mass.html"><span class="iconify" data-icon="lucide:weight"></span> Mass</a>
+                <a href="temperature.html"><span class="iconify" data-icon="lucide:thermometer"></span> Temperature</a>
+                <a href="currency.html" class="highlight"><span class="iconify" data-icon="lucide:banknote"></span> Currency</a>
+            </div>
+        </li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">🏠 Home</a>
+    <a href="chart.html" onclick="closeMobile()">📊 Chart</a>
+    <div class="mob-sub-title">Converters</div>
+    <a href="length.html" onclick="closeMobile()">📏 Length</a>
+    <a href="area.html" onclick="closeMobile()">📐 Area</a>
+    <a href="volume.html" onclick="closeMobile()">📦 Volume</a>
+    <a href="mass.html" onclick="closeMobile()">⚖️ Mass</a>
+    <a href="temperature.html" onclick="closeMobile()">🌡️ Temperature</a>
+    <a href="currency.html" onclick="closeMobile()">💰 Currency</a>
+    <div class="mob-sub-title">Learn</div>
+    <a href="history.html" onclick="closeMobile()">📜 History</a>
+    <a href="articles.html" onclick="closeMobile()">📖 Articles</a>
+    <a href="faq.html" onclick="closeMobile()">❓ FAQs</a>
+    <a href="contact.html" onclick="closeMobile()">✉️ Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero bg-light">
+    <div class="shape" style="width:220px;height:220px;background:#E53935;top:-45px;right:18%"></div>
+    <h1 class="anim-blur">📦 Volume Converter</h1>
+    <p class="anim-blur delay-1">Fluid Ounces, Gallons, Liters, Cubic Feet, and more</p>
+</div>
+
+<!-- CONVERTER SECTION -->
+<section class="section">
+    <div class="container">
+        <div class="converter-card scroll-anim zoom">
+            <h2>Volume</h2>
+            <p class="subtitle">Enter a value and select units to convert instantly</p>
+            <div class="conv-row">
+                <div class="conv-group">
+                    <label>From</label>
+                    <input type="number" id="volFrom" placeholder="Enter value" oninput="convertVolume()">
+                </div>
+                <div class="conv-group">
+                    <label>Unit</label>
+                    <select id="volFromUnit" onchange="convertVolume()">
+                        <option value="fl_oz">Fluid Ounces</option>
+                        <option value="gal" selected>Gallons</option>
+                        <option value="L">Liters</option>
+                        <option value="mL">Milliliters</option>
+                        <option value="cu_ft">Cubic Feet</option>
+                        <option value="cu_yd">Cubic Yards</option>
+                        <option value="cu_m">Cubic Meters</option>
+                    </select>
+                </div>
+                <button class="conv-swap" onclick="swapVolume()"><span class="iconify" data-icon="lucide:arrow-left-right"></span></button>
+                <div class="conv-group">
+                    <label>To Unit</label>
+                    <select id="volToUnit" onchange="convertVolume()">
+                        <option value="fl_oz">Fluid Ounces</option>
+                        <option value="gal">Gallons</option>
+                        <option value="L" selected>Liters</option>
+                        <option value="mL">Milliliters</option>
+                        <option value="cu_ft">Cubic Feet</option>
+                        <option value="cu_yd">Cubic Yards</option>
+                        <option value="cu_m">Cubic Meters</option>
+                    </select>
+                </div>
+            </div>
+            <div class="conv-result" id="volResult"><div class="val">—</div><div class="unit">Enter a value to see result</div></div>
+            <div class="conv-formula" id="volFormula" style="display:none"></div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-glow g1"></div>
+    <div class="footer-glow g2"></div>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="flogo">Metric<b>Pro</b></div>
+            <p>A comprehensive metric conversion tool for students and professionals.</p>
+        </div>
+        <div>
+            <h4>Converters</h4>
+            <ul>
+                <li><a href="length.html">Length</a></li>
+                <li><a href="area.html">Area</a></li>
+                <li><a href="volume.html">Volume</a></li>
+                <li><a href="mass.html">Mass</a></li>
+                <li><a href="temperature.html">Temperature</a></li>
+                <li><a href="currency.html">Currency</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Learn</h4>
+            <ul>
+                <li><a href="chart.html">Chart</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2025 MetricPro. All rights reserved.</div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="iconify" data-icon="lucide:chevron-up"></span></button>
+<div class="toast" id="toast"><span class="iconify" data-icon="lucide:check-circle"></span><span id="toastMsg"></span></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
